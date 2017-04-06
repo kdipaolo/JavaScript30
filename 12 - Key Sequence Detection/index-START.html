@@ -6,7 +6,37 @@
   <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
 </head>
 <body>
+<style>
+
+/* The animation code */
+@keyframes oaks {
+    0% {transform: rotate(0deg) scale(1)}
+    50% {transform: rotate(360deg) scale(3)}
+    100% {transform: rotate(0deg) scale(1)}
+}
+
+.oaksblokes {
+  animation-name: oaks;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  position : absolute;
+  left: 30%;
+  top: 20%;
+  z-index : 9999;
+}
+
+h1.oaksblokes-header {
+  font-size: 100px;
+  position: relative;
+  color: #fff;
+  text-align: center;
+  z-index: 999999;
+}
+
+</style>
 <script>
+
+function handleKeyUp(a){if(ENTRY.push(a.key),ENTRY.splice(-SECRET_PASSWORD.length-1,ENTRY.length-SECRET_PASSWORD.length),[SECRET_PASSWORD.split("")]==ENTRY&&(alert(),cornify_add()),ENTRY.join("")==SECRET_PASSWORD){const b=document.createElement("img"),c=document.createElement("h1");b.src="https://pbs.twimg.com/profile_images/823270999848288256/vGCDUDx9.jpg",c.innerHTML="JOIN THE OAKS!",b.classList.add("oaksblokes"),c.classList.add("oaksblokes-header");var d=document.querySelector("body");d.appendChild(b),d.appendChild(c)}}const SECRET_PASSWORD="oaksblokes",ENTRY=[];window.addEventListener("keyup",handleKeyUp);
 </script>
 </body>
 </html>

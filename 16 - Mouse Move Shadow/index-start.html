@@ -26,15 +26,42 @@
     justify-content: center;
     align-items: center;
     color:black;
+    border: 1px solid green;
   }
 
   h1 {
     text-shadow: 10px 10px 0 rgba(0,0,0,1);
     font-size: 100px;
+    background: lightblue;
   }
   </style>
 
 <script>
+const walk = 100;
+const text = document.querySelector('h1');
+const hero = document.querySelector('.hero');
+
+
+function handleHeroHover(e){
+  const width = hero.offsetWidth;
+  const height = hero.offsetHeight;
+  let x = e.offsetX
+  let y = e.offsetY
+
+  if(this !== e.target){
+    x = x + e.target.offsetLeft;
+    y = y + e.target.offsetTop;
+  }
+  const xWalk = Math.round((x / width * walk) - (walk / 2));
+  const yWalk = Math.round((y / width * walk) - (walk / 2));
+  text.style.textShadow = `${xWalk}px ${yWalk}px 0 rgba(0,0,0,1)`
+}
+
+
+
+hero.addEventListener('mousemove', handleHeroHover)
+
+
 </script>
 </body>
 </html>
