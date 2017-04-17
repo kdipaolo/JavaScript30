@@ -55,6 +55,27 @@
 
 <script>
 
+const nav = document.querySelector('#main');
+const body = document.querySelector('body')
+const onLoadNavOffset = nav.offsetTop;
+const siteWrap = document.querySelector('.site-wrap');
+
+function handleNav(){
+  if(onLoadNavOffset < window.pageYOffset){
+    body.classList.add('fixed-nav')
+    siteWrap.style.marginTop = nav.clientHeight + 'px'
+  }else{
+    body.classList.remove('fixed-nav');
+    siteWrap.style.marginTop = '0px'
+  }
+}
+
+window.addEventListener('scroll', handleNav)
+
+
+
+
+
 </script>
 
 </body>
